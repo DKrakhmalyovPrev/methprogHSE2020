@@ -3,11 +3,31 @@
 #include "ConversionSort.h"
 #include "Hierarchy.h"
 #include "MultiMethods.h"
-
+#include "Functor.h"
 
 using tltp = TypeList<int, int, float, double>;
 
+class C
+{
 
+};
+
+
+int f(C* x, char y)
+{
+	std::cout << y;
+	return 2;// .* x;
+}
+
+class Dog1
+{
+public:
+	int bark(char t)
+	{
+		std::cout << "Bark" << std::endl;
+		return 5;
+	}
+};
 
 int main()
 {
@@ -58,5 +78,22 @@ int main()
 
 	std::cout << typeid(Dog).hash_code() << std::endl; 
 	std::cout << typeid(Cat).hash_code() << std::endl;
+
+	functor<decltype(f)> pfunc(f);
+
+	C c_;
+	std::cout << std::endl << pfunc(&c_, 'r') << std::endl;
+
+	functor<decltype(f)> pfunc2(pfunc);
+
+	functor <int(Dog1, char)> pfunc3 = &Dog1::bark;
+
+	Dog1 dg1;
+
+	std::cout << pfunc3(dg1, 'd') << std::endl;
+
+	// Доп задание
+	// Реализовать расширение/свой функтор, который в конструкторе принимает часть аргументов функции
+	// а остальные -- при вызове оператора ()
 	return 0;
 }

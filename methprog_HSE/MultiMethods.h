@@ -12,20 +12,20 @@ class Animal
 class Dog
 	: public virtual Animal
 {
-	virtual void f() override {};
+	virtual void f() override { std::cout << "Bark" << std::endl; };
 };
 
 class Cat
 	: public virtual Animal
 {
-	virtual void f() override {};
+	virtual void f() override { std::cout << "Meow" << std::endl; };
 };
 
 class CatDog
 	: public virtual Dog,
 	public virtual Cat
 {
-	virtual void f() override {};
+	virtual void f() override { std::cout << "MeowBark" << std::endl; };
 };
 
 

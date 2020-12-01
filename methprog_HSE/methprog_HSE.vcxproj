@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConversionSort.h" />
+    <ClInclude Include="Functor.h" />
     <ClInclude Include="MultiMethods.h" />
     <ClInclude Include="Hierarchy.h" />
     <ClInclude Include="TypeList.h" />

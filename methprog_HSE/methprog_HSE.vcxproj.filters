@@ -32,5 +32,8 @@
     <ClInclude Include="MultiMethods.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Functor.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
